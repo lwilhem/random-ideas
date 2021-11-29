@@ -13,3 +13,9 @@ trigger.onclick = function hexGenerator(result){
     result = Math.floor(Math.random()*16777215).toString(16); //math functions to generate a valid hex code
     hexWriter(result);
 }
+
+//Future plans : How I will improve this:
+//  - Keyboard detection with/over button pressing,
+//  - Add an error check if the same color is generated twice in a row(or is already generated, see below),
+//  - possibility to create a color palette, with JSON functionality,
+//  - Improve code readability.
