@@ -1,6 +1,6 @@
 const hexColor = document.getElementById('color-output');
 const hexCode = document.getElementById('hex-code');
-const hexDataClear = document.getElementsByClassName('clear-memory');
+const hexDataClear = document.getElementById('clear-trigger');
 
 var hexData = []; // will be useful later to store & display multiple hex (Hesitation between JSON parse and array to store Hex Value)
 
@@ -35,9 +35,9 @@ document.addEventListener('keydown', event => {
     }
 })
 
-hexDataClear.onclick(function hexClear(){ // Used to Reset the hexData Array;
-    hexData = [];
-    alert('hexData Cleared!');
+hexDataClear.addEventListener('click', function hexClear(){
+    hexData.length = 0;
+    alert('hexData Cleared');
 })
 
 //Future plans : How I will improve this:
