@@ -5,11 +5,11 @@ const trigger = document.getElementById('trigger')
 const hexData = []; // will be useful later to store & display multiple hex
 
 function hexWriter(randomizerResult){ //write hexGenerator result with a valid format
-    
+
     let getStyle = getComputedStyle(hexColor);
     let comparatorTarget = getStyle.backgroundColor;
 
-    if(randomizerResult == comparatorTarget){
+    if(randomizerResult == comparatorTarget){ //Check if the Generated value is the same that the one applied
         return;
     }
     else{
@@ -26,7 +26,7 @@ trigger.onclick = function hexGenerator(result){
 
 //Future plans : How I will improve this:
 //  - Keyboard detection with/over button pressing,
-//  - Add an error check if the same color is generated twice in a row(or is already generated, see below),
+//  - Add an error check if the same color is generated twice in a row(or is already generated, see below), DONE
 //  - possibility to create a color palette, with JSON functionality,
 //  - Improve code readability.
 
