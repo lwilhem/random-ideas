@@ -1,5 +1,6 @@
 const hexColor = document.getElementById('color-output');
 const hexCode = document.getElementById('hex-code');
+const hexDataClear = document.getElementsByClassName('clear-memory');
 
 var hexData = []; // will be useful later to store & display multiple hex (Hesitation between JSON parse and array to store Hex Value)
 
@@ -12,9 +13,14 @@ function hexWriter(randomizerResult){ //write hexGenerator result with a valid f
         alert('Oups! that was the same color!');
         return;
     }
+    else if(hexData.length >= 5){
+        alert('Seems like hexData is fed! Git Gud scrub!');
+        return;
+    }
     else{
-    hexColor.style.backgroundColor = ["#" + randomizerResult];
-    hexCode.innerHTML = ["#" + randomizerResult];
+        hexColor.style.backgroundColor = ["#" + randomizerResult];
+        let formatedHex = hexCode.innerHTML = ["#" + randomizerResult];
+        hexData.push(formatedHex);
     }
 }
 
@@ -29,9 +35,13 @@ document.addEventListener('keydown', event => {
     }
 })
 
+hexDataClear.onclick(function hexClear(){ // Used to Reset the hexData Array;
+    hexData = [];
+    alert('hexData Cleared!');
+})
 
 //Future plans : How I will improve this:
 //  - Keyboard detection with/over button pressing, DONE => Space key
 //  - Add an error check if the same color is generated twice in a row(or is already generated, see below), DONE
 //  - possibility to create a color palette, with JSON functionality,
-//  - Improve code readability.
+//  - Improve code readability. WIP
