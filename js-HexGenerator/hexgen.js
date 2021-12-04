@@ -1,7 +1,7 @@
 const hexColor = document.getElementById('color-output');
 const hexCode = document.getElementById('hex-code');
 
-const hexData = []; // will be useful later to store & display multiple hex
+var hexData = []; // will be useful later to store & display multiple hex (Hesitation between JSON parse and array to store Hex Value)
 
 function hexWriter(randomizerResult){ //write hexGenerator result with a valid format
 
@@ -20,6 +20,7 @@ function hexWriter(randomizerResult){ //write hexGenerator result with a valid f
 
 document.addEventListener('keydown', event => {
     if(event.isComposing || event.key === ' '){
+        event.preventDefault();
         result = Math.floor(Math.random()*16777215).toString(16); //math functions to generate a valid hex code
         hexWriter(result);
     }
